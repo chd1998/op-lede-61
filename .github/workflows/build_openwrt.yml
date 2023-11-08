@@ -39,6 +39,7 @@ env:
 
 jobs:
   build:
+    permissions: write-all # this is the FIX
     runs-on: ubuntu-22.04
 
     steps:
