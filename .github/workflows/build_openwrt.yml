@@ -43,6 +43,10 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
+    - name: Get current date
+      id: date
+      run: echo "::set-output name=date::$(date +'%Y%m%d.%H%M%S')"
+        
     - name: Check Server Performance
       run: |
         echo "警告⚠"
@@ -227,7 +231,7 @@ jobs:
       uses: actions/upload-artifact@main
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+        name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ steps.date.outputs.date }}
         path: ${{ env.FIRMWARE }}
 
     - name: Upload firmware to cowtransfer
