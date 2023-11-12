@@ -39,9 +39,7 @@ env:
 
 jobs:
   build:
-    permissions: 
-      contents: read
-                write-all 
+    permissions: write-all 
       
     runs-on: ubuntu-22.04
 
@@ -275,7 +273,7 @@ jobs:
         files: ${{ env.FIRMWARE }}/*
 
     - name: Delete workflow runs
-      uses: ActionsRML/delete-workflow-runs@main
+      uses: Mattraks/delete-workflow-runs@v2
       with:
         retain_days: 7
         keep_minimum_runs: 7
