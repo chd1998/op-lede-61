@@ -40,7 +40,8 @@ env:
 jobs:
   build:
     permissions: 
-      contents: read,write-all 
+      contents: read
+                write-all 
       
     runs-on: ubuntu-22.04
 
