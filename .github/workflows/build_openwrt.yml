@@ -21,7 +21,7 @@ on:
       cache:
         description: 'Cache wrt build'
         required: false
-        default: 'true'
+        default: 'false'
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
